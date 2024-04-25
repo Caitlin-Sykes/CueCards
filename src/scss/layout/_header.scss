@@ -1,0 +1,49 @@
+/** ----------------------------------
+        Colours and Padding
+   ----------------------------------**/
+$header-background-color: #333;
+$header-text-color: #b876f6;
+$header-heading-text-color: #FF0000FF;
+$header-padding: 10px 20px;
+
+/** ----------------------------------
+        Generic Header Stuff
+   ----------------------------------**/
+header {
+  display: flex;
+  background-color: $header-background-color;
+
+  h1 {
+    color: $header-text-color;
+  }
+
+  padding: $header-padding;
+  text-align: center;
+}
+
+/** ----------------------------------
+        Navigation Bar Elements
+   ----------------------------------**/
+nav {
+  width: 100vh;
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+
+    li {
+      display: inline;
+      margin-right: 20px;
+
+      a {
+        color: $header-heading-text-color;
+        text-decoration: none;
+
+        &:hover {
+          color: #ccc;
+        }
+      }
+    }
+  }
+}
