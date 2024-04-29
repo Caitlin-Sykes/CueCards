@@ -11,13 +11,12 @@ $sub-nav-colour: #58375a;
         Generic Header Stuff
    ----------------------------------**/
 header {
-  display: flex;
   background-color: $header-background-color;
-  position: fixed;
+  position:absolute;
   top: 0;
   width: 100%;
-  justify-content: center; /* Center content horizontally */
-  align-items: center; /* Center content vertically */
+  justify-content: center;
+  align-items: center;
 
   h1 {
     color: $header-text-color;
@@ -58,6 +57,10 @@ nav {
           width: 100%;
         }
       }
+
+
     }
   }
+
+
 }

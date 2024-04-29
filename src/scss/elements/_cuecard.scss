@@ -1,0 +1,62 @@
+/** ----------------------------------
+        Colours and Padding
+   ----------------------------------**/
+
+//Card Colours
+$card-base-colour: #333032;
+$tag-text-colour: #070719;
+
+//Tag Randomness
+$tag-colours: (
+#f33b3b,
+#67ce3e,
+#6ceeb5,
+#a958d7,
+);
+$repeat: 30;
+
+@for $i from 1 through $repeat {
+p.tag:nth-child(#{length($tag-colours)}n+#{$i}) {
+  background: lighten(nth($tag-colours, random(length($tag-colours))), 20%);
+}
+}
+
+
+/** ----------------------------------
+        Cue Card Styling
+   ----------------------------------**/
+
+
+.card {
+     background-color: $card-base-colour;
+     width: 55%;
+     border-radius: 5%;
+     padding: 5px;
+
+
+    img {
+      background-position: top;
+    }
+
+  p.tag {
+    border-radius: 5%;
+    width: 30%;
+    display: flex;
+    color: $tag-text-colour;
+  }
+  }
+
+.gridContainer {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 20px;
+  width: 100%;
+  height:auto;
+
+  .gridItem {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+}

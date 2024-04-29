@@ -1,5 +1,20 @@
+/** ----------------------------------
+        Colours and Padding
+   ----------------------------------**/
+
 $body-background-colour: #3a1949;
 
+//Buttons
+$add-card-button-colour: #63c04c;
+$add-card-button-colour-shadow: #376e2e;
+$remove-card-button-colour: #e12e2e;
+$remove-card-button-colour-shadow: #961f1f;
+
+
+
+/** ----------------------------------
+        General Layout Stuff
+   ----------------------------------**/
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -15,15 +30,6 @@ $body-background-colour: #3a1949;
   -moz-osx-font-smoothing: grayscale;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
 body {
   margin: 0;
   display: flex;
@@ -34,13 +40,53 @@ body {
   width:100%;
 }
 
+#app {
+  text-align: center;
+  width:100%;
+  height:100vh;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+/** ----------------------------------
+        Links
+   ----------------------------------**/
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+/** ----------------------------------
+        Headings
+----------------------------------**/
+
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
 }
 
+
+/** ----------------------------------
+        Buttons
+   ----------------------------------**/
 button {
-  border-radius: 8px;
+  border-radius: 0px 0px 8px 8px;
   border: 1px solid transparent;
   padding: 0.6em 1.2em;
   font-size: 1em;
@@ -58,24 +104,23 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-.card {
-  padding: 2em;
+.addCard {
+  background-color: $add-card-button-colour;
+  width: 50%;
+  &:hover {
+    background-color: $add-card-button-colour-shadow;
+  }
 }
 
-#app {
-  text-align: center;
-  width:100%;
+.deleteCard {
+  background-color: $remove-card-button-colour;
+  width: 50%;
+  &:hover {
+    background-color: $remove-card-button-colour-shadow;
+  }
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-}
+
+
+
+

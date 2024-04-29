@@ -1,5 +1,69 @@
-$main-container-colour: #935591;
+/** ----------------------------------
+        Colours and Padding
+   ----------------------------------**/
 
-div.main-container{
+//Main Container
+$main-container-colour: #935591;
+$main-container-padding: 10px;
+
+//Columns
+$column-background-colour: #883a7b;
+
+//Container to hold list of decks
+$deck-list-container: #4f494e;
+
+/** ----------------------------------
+        Main Containers
+   ----------------------------------**/
+
+div.mainContainer {
   background-color: $main-container-colour;
+  padding: $main-container-padding;
+  position:absolute;
+  width:100%;
+  bottom:60px;
+
 }
+
+.gridContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+  width: 100%;
+  height:auto;
+
+.gridItem {
+  padding: 20px;
+  background-color: $column-background-colour;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &:first-child {
+    flex-direction: column;
+    align-items: normal;
+    //#buttonContainer {
+    //
+    //}
+  }
+}
+}
+
+/** ----------------------------------
+        Cue Card Container & Card
+   ----------------------------------**/
+.deckContainer {
+  background-color: $deck-list-container;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px 8px 0 0;
+
+  div {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+
+    align-items: center;
+  }
+
+}
+
