@@ -1,5 +1,5 @@
 <script setup>
-
+  import TagRow from './RowOfTags.vue'
 </script>
 
 <template>
@@ -7,10 +7,11 @@
     <img alt="Cue card Cover Art" src="https://picsum.photos/200/200"/>
     <div class="card-body">
       <h2>Title Deck</h2>
+      <p>Bonjour. Je m'appelle Cait. Je suis vingt-et-un ans, et mon anniversaire est vingt-huit Mars. Je ne sais pas quoi écrire ici. Au revoir. Ceci est une description </p>
       <div class="gridContainer">
         <!--  Column Left -->
         <div class="gridItem">
-          <p class="tag" v-for="tag in tags">{{ tag }}</p>
+          <TagRow :tags="tag"></TagRow>
         </div>
       </div>
     </div>
@@ -25,29 +26,10 @@
   export default {
     data() {
       return {
-        tags: ["cait", "loves", "adam", "very", "much"]
-      };
-    }
+            tag: ["Cait", "Loves", "Adam"],
+          }
+        }
   };
 </script>
-<!--would need
-- name of deck
-- image of deck
-- tags for deck
-- words of deck
-- id for each deck
 
-//-------
-table 1 : deck identify
-- uuid
-- display_name
-- display_image
-- tags
 
-table 2 : deck contents
-list of records containing each word for the deck
-- uuid
-- word
-- word 2
-- type
--->

@@ -1,5 +1,6 @@
 <script setup>
   import CueCard from '../elements/CueCard.vue'
+  import TagRow from '../elements/RowOfTags.vue'
 </script>
 
 <template>
@@ -9,22 +10,26 @@
     <div class="gridContainer">
       <!--  Column Left -->
       <div class="gridItem">
-        <div  class="deckContainer">
-          <div>
-            <h3>Name of Deck</h3>
-            <h3> Tags</h3>
-            <h3> Logo</h3>
-          </div>
-          <div v-for="card in Cards">
-            <p>{{ card.name_of_deck }}</p>
-            <p> {{ card.tags }}</p>
-            <span class="material-symbols-outlined"> {{ card.logo}}</span>
-          </div>
+        <h2>Most Recently Opened</h2>
+
+        <!--  Title of Cards  -->
+        <div class="headingContainer">
+          <h3 class="grid-item">Title</h3>
+          <h3 class="grid-item">Description</h3>
+          <h3 class="grid-item">Tags</h3>
+        </div>
+        <!-- List of Stored Cards       -->
+        <div v-for="card in Cards" :class="{'selectedRow': (card.id === selectedRow)}" @click="selectRow(card.id)" :key="card.id" class="deckContainer">
+            <div class="grid-item">{{ card.name_of_deck }}</div>
+            <div class="grid-item">{{ card.description }}</div>
+            <TagRow class="grid-item" :tags="card.tags"></TagRow>
 
         </div>
+
+        <!-- Open/Delete Cards     -->
         <div>
-          <button class="addCard" type="button">Add Card</button>
-          <button class="deleteCard" type="button">Delete Card</button>
+          <button class="openDeck" type="button">Open Deck</button>
+          <button class="deleteDeck" type="button">Delete Deck</button>
         </div>
       </div>
       <!-- Column Right -->
@@ -32,7 +37,6 @@
         <CueCard></CueCard>
       </div>
     </div>
-
   </div>
 </template>
 
@@ -40,34 +44,52 @@
 export default {
   data() {
     return {
+      //dummy data
       Cards: [
         {
+          id: "1",
           name_of_deck: "French",
-          tags: "bonjour, salut, coucou",
-          logo: "flag",
+          description: "bonjour, salut, coucou",
+          tags: ["French", "Language"],
         },
 
         {
+          id: "2",
           name_of_deck: "English",
-          tags: "hello, hi, hey",
-          logo: "sports_score"
+          description: "hello, hi, hey",
+          tags: ["English", "Language", "Confuse", "quelquefois"],
         },
 
         {
+          id: "3",
           name_of_deck: "Baking",
-          tags: "flambe, brulee, yum",
-          logo: "cookie"
+          description: "flambe, brulee, yum",
+          tags: ["Food", "Cooking", "Recipes"],
         },
 
         {
+          id: "4",
           name_of_deck: "Je ne sais pas",
-          tags: "avoir, savoir, manger",
-          logo: "edit"
+          description: "avoir, savoir, manger",
+          tags: ["French", "Language", "Verbs"],
         },
-    ]};
+      ],
+      selectedRow: null
+    };
+  },
+
+methods: {
+  selectRow(id) {
+      this.selectedRow = id;
+    }
   }
 };
+
 </script>
 <style scoped lang="scss">
   @import '../../scss/pages/_home';
+
+  .selectedRow {
+    background-color: #d45ac0;
+  }
 </style>

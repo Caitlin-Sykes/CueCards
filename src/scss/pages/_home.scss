@@ -19,10 +19,6 @@ $deck-list-container: #4f494e;
 div.mainContainer {
   background-color: $main-container-colour;
   padding: $main-container-padding;
-  position:absolute;
-  width:100%;
-  bottom:60px;
-
 }
 
 .gridContainer {
@@ -42,9 +38,6 @@ div.mainContainer {
   &:first-child {
     flex-direction: column;
     align-items: normal;
-    //#buttonContainer {
-    //
-    //}
   }
 }
 }
@@ -52,18 +45,23 @@ div.mainContainer {
 /** ----------------------------------
         Cue Card Container & Card
    ----------------------------------**/
-.deckContainer {
-  background-color: $deck-list-container;
-  width: 100%;
-  height: 100%;
-  border-radius: 8px 8px 0 0;
 
-  div {
+  .deckContainer, .headingContainer {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-
-    align-items: center;
+    grid-template-columns: repeat(3, 1fr);
+    background-color: $deck-list-container;
   }
 
+.headingContainer {
+  border-bottom: black solid 2px;
 }
 
+  .cardContainer {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .grid-item {
+    flex: 1;
+    padding: 10px;
+  }

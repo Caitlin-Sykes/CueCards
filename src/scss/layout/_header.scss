@@ -12,8 +12,9 @@ $sub-nav-colour: #58375a;
    ----------------------------------**/
 header {
   background-color: $header-background-color;
-  position:absolute;
+  display: flex;
   top: 0;
+  margin-bottom: 1rem;
   width: 100%;
   justify-content: center;
   align-items: center;
