@@ -28,8 +28,8 @@
 
         <!-- Open/Delete Cards     -->
         <div>
-          <button class="openDeck" type="button">Open Deck</button>
-          <button class="deleteDeck" type="button">Delete Deck</button>
+          <button class="openDeck" type="button" @click="openDeck()">Open Deck</button>
+          <button class="deleteDeck" type="button" @click="deleteDeck">Delete Deck</button>
         </div>
       </div>
       <!-- Column Right -->
@@ -79,6 +79,8 @@ export default {
   },
 
 methods: {
+  // Method that handles selecting the rows
+  // if the row is already selected, unselects it
   selectRow(id) {
       if (this.selectedRow === id) {
         this.selectedRow = null;
@@ -86,7 +88,32 @@ methods: {
       else {
         this.selectedRow = id;
       }
+    },
+
+  // Method to open the decks if selected
+  openDeck() {
+    // If null, don't do anything and send an alert
+    if (this.selectedRow === null) {
+      alert("There is no row selected.");
     }
+
+    else {
+      console.log("OPENING: Selected ID: %s", this.selectedRow);
+    }
+  },
+
+  deleteDeck() {
+    // If null, don't do anything and send an alert
+    if (this.selectedRow === null) {
+      alert("There is no row selected.");
+    }
+
+    else {
+      console.log("DELETION: Selected ID: %s", this.selectedRow);
+    }
+  }
+
+
   }
 };
 
