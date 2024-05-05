@@ -80,7 +80,12 @@ export default {
 
 methods: {
   selectRow(id) {
-      this.selectedRow = id;
+      if (this.selectedRow === id) {
+        this.selectedRow = null;
+      }
+      else {
+        this.selectedRow = id;
+      }
     }
   }
 };
