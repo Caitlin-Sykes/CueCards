@@ -1,5 +1,5 @@
-<script setup>
-  import CueCard from '../elements/CueCard.vue'
+Home.vue<script setup>
+import CueCard from '../elements/CueCard.vue'
   import TagRow from '../elements/RowOfTags.vue'
 </script>
 
@@ -19,7 +19,7 @@
           <h3 class="grid-item">Tags</h3>
         </div>
         <!-- List of Stored Cards       -->
-        <div v-for="card in Cards" :class="{'selectedRow': (card.id === selectedRow)}" @click="handleRowClick(card.id)" :key="card.id" class="deckContainer">
+        <div v-for="card in Cards" :class="{'selectedRow': (card.id === selectedRow)}" @click="selectRow(card.id)" :key="card.id" class="deckContainer">
             <div class="grid-item">{{ card.name_of_deck }}</div>
             <div class="grid-item">{{ card.description }}</div>
             <TagRow class="grid-item" :tags="card.tags"></TagRow>
@@ -41,7 +41,6 @@
 </template>
 
 <script>
-import { selectRow,  openDeck, deleteDeck } from '../../js/manageCards.js';
 export default {
   data() {
     return {
@@ -80,9 +79,40 @@ export default {
   },
 
 methods: {
-    handleRowClick(id) {
-      this.selectedRow = selectRow(this.selectedRow, id);
+  // Method that handles selecting the rows
+  // if the row is already selected, unselects it
+  selectRow(id) {
+      if (this.selectedRow === id) {
+        this.selectedRow = null;
+      }
+      else {
+        this.selectedRow = id;
+      }
+    },
+
+  // Method to open the decks if selected
+  openDeck() {
+    // If null, don't do anything and send an alert
+    if (this.selectedRow === null) {
+      alert("There is no row selected.");
+    }
+
+    else {
+      console.log("OPENING: Selected ID: %s", this.selectedRow);
+    }
   },
+
+  deleteDeck() {
+    // If null, don't do anything and send an alert
+    if (this.selectedRow === null) {
+      alert("There is no row selected.");
+    }
+
+    else {
+      console.log("DELETION: Selected ID: %s", this.selectedRow);
+    }
+  }
+
 
   }
 };

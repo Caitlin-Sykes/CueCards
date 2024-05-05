@@ -6,6 +6,7 @@
 - Tags - string, separated by ;
 - Date Last Opened; 
 - Date Created
+- Cover Image
 
 Database 2 - Cards
 - Card ID - Primary Key

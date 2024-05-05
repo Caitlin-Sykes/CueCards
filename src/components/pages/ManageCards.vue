@@ -1,5 +1,4 @@
 <script setup>
-  import CueCard from '../elements/CueCard.vue'
   import TagRow from '../elements/RowOfTags.vue'
 </script>
 
@@ -10,7 +9,7 @@
     <div class="gridContainer">
       <!--  Column Left -->
       <div class="gridItem">
-        <h2>Most Recently Opened</h2>
+        <h2>Current Decks of Cards</h2>
 
         <!--  Title of Cards  -->
         <div class="headingContainer">
@@ -20,21 +19,16 @@
         </div>
         <!-- List of Stored Cards       -->
         <div v-for="card in Cards" :class="{'selectedRow': (card.id === selectedRow)}" @click="handleRowClick(card.id)" :key="card.id" class="deckContainer">
-            <div class="grid-item">{{ card.name_of_deck }}</div>
-            <div class="grid-item">{{ card.description }}</div>
-            <TagRow class="grid-item" :tags="card.tags"></TagRow>
+          <div class="grid-item">{{ card.name_of_deck }}</div>
+          <div class="grid-item">{{ card.description }}</div>
+          <TagRow class="grid-item" :tags="card.tags"></TagRow>
 
         </div>
-
         <!-- Open/Delete Cards     -->
         <div>
           <button class="openDeck" type="button" @click="openDeck">Open Deck</button>
           <button class="deleteDeck" type="button" @click="deleteDeck">Delete Deck</button>
         </div>
-      </div>
-      <!-- Column Right -->
-      <div class="gridItem">
-        <CueCard></CueCard>
       </div>
     </div>
   </div>
@@ -79,17 +73,16 @@ export default {
     };
   },
 
-methods: {
+  methods: {
     handleRowClick(id) {
       this.selectedRow = selectRow(this.selectedRow, id);
-  },
-
+    },
   }
-};
+}
 
 </script>
 <style scoped lang="scss">
-  @import '../../scss/pages/_home';
+  @import '../../scss/pages/_manageCards';
 
   .selectedRow {
     background-color: #d45ac0;
