@@ -5,8 +5,8 @@
 <template>
   <header>
     <nav>
-      <h1>Cait's Cue Cards</h1>
       <ul>
+        <img src="https://picsum.photos/200/200" alt="The logo for the Cue Card app.">
         <li><router-link to="/">Home</router-link></li>
         <li><router-link to="/ManageDecks">Manage Decks</router-link></li>
         <li><router-link to="/StudyCards">Study Cards</router-link></li>
