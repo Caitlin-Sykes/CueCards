@@ -27,13 +27,19 @@ $card-base-colour: #333032;
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 20px;
-  width: 100%;
   height:auto;
 
   .gridItem {
     display: flex;
-    width: 100%;
     justify-content: center;
     align-items: stretch;
   }
+}
+
+/** ----------------------------------
+        Icons Styling
+   ----------------------------------**/
+
+.material-symbols-outlined {
+  display: none;
 }

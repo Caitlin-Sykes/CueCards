@@ -1,8 +1,10 @@
 <script setup>
   import TagRow from '../elements/RowOfTags.vue'
+  import WarningBox from "../elements/WarningBox.vue";
 </script>
 
 <template>
+  <WarningBox></WarningBox>
 <!--  Main Parent Container-->
   <div class="mainContainer">
 <!--    Container for the Columns-->
@@ -25,9 +27,10 @@
 
         </div>
         <!-- Open/Delete Cards     -->
-        <div>
-          <button class="openDeck" type="button" @click="openDeck">Open Deck</button>
-          <button class="deleteDeck" type="button" @click="deleteDeck">Delete Deck</button>
+        <div class="modifyButtonsContainer">
+          <button class="openDeck" type="button" @click="">Manage Deck</button>
+          <button class="deleteDeck" type="button" @click="">Delete Deck</button>
+          <button class="filterDeck" type="button" @click="">Filter Deck</button>
         </div>
       </div>
     </div>
@@ -35,7 +38,7 @@
 </template>
 
 <script>
-import { selectRow,  openDeck, deleteDeck } from '../../js/manageCards.js';
+import { selectRow } from '../../js/pages/manageDecks.js';
 export default {
   data() {
     return {
@@ -74,16 +77,20 @@ export default {
   },
 
   methods: {
+    // Handles clicking on the rows
     handleRowClick(id) {
       this.selectedRow = selectRow(this.selectedRow, id);
     },
+    
+  
+    
   }
 }
 
 </script>
 <style scoped lang="scss">
-  @import '../../scss/pages/_manageCards';
-
+  @import '../../scss/pages/_manageDecks';
+  
   .selectedRow {
     background-color: #d45ac0;
   }

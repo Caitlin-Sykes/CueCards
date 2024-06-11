@@ -1,0 +1,25 @@
+/** ----------------------------------
+        Colours and Padding
+   ----------------------------------**/
+$warning-container-colour : #6469bb;
+$warning-container-border-colour: #303462;
+$warning-container-heading-colour: #ffe0e4;
+
+
+/** ----------------------------------
+        Main Containers
+   ----------------------------------**/
+
+.warningContainer {
+  width: 33%;
+  margin: auto;
+  flex-direction: column;
+  display: flex;
+  border: 3px solid $warning-container-border-colour;
+  background-color: $warning-container-colour;
+  padding: 10px;
+  
+  h3 {
+    color: $warning-container-heading-colour;
+  }
+}

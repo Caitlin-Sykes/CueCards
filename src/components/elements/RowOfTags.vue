@@ -1,7 +1,7 @@
 <script setup>
 
 </script>
-
+<!--hii-->
 <template>
   <div class="tags">
     <p v-for="tag in tags" class="tag">{{ tag }}</p>
@@ -56,7 +56,7 @@ export default {
     border-radius: 5%;
     padding: 7px;
     display: flex;
-    margin: 0 1px 0 1px;
+    margin: 0 1px 1px 1px;
     color: $tag-text-colour;
     text-align: center;
   }

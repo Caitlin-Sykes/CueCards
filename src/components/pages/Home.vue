@@ -27,7 +27,7 @@
         </div>
 
         <!-- Open/Delete Cards     -->
-        <div>
+        <div class="modifyButtonsContainer">
           <button class="openDeck" type="button" @click="openDeck">Open Deck</button>
           <button class="deleteDeck" type="button" @click="deleteDeck">Delete Deck</button>
         </div>
@@ -41,7 +41,7 @@
 </template>
 
 <script>
-import { selectRow,  openDeck, deleteDeck } from '../../js/manageCards.js';
+import { selectRow } from '../../js/pages/manageDecks.js';
 export default {
   data() {
     return {

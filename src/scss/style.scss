@@ -9,7 +9,8 @@ $add-card-button-colour: #63c04c;
 $add-card-button-colour-shadow: #376e2e;
 $remove-card-button-colour: #e12e2e;
 $remove-card-button-colour-shadow: #961f1f;
-
+$filter-card-button-colour: #50b9f1;
+$filter-card-button-colour-shadow: #2b6683;
 /** ----------------------------------
         General Layout Stuff
    ----------------------------------**/
@@ -100,23 +101,37 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-.openDeck {
-  background-color: $add-card-button-colour;
-  width: 50%;
-  &:hover {
-    background-color: $add-card-button-colour-shadow;
+// All Modify Buttons 
+.modifyButtonsContainer {
+  display: flex;
+
+  button {
+    flex: 1;
+  }
+
+  
+  .openDeck {
+    background-color: $add-card-button-colour;
+    &:hover {
+      background-color: $add-card-button-colour-shadow;
+    }
+  }
+
+  .deleteDeck {
+    background-color: $remove-card-button-colour;
+    &:hover {
+      background-color: $remove-card-button-colour-shadow;
+    }
   }
 }
 
-.deleteDeck {
-  background-color: $remove-card-button-colour;
-  width: 50%;
+
+.filterDeck {
+  background-color: $filter-card-button-colour;
   &:hover {
-    background-color: $remove-card-button-colour-shadow;
+    background-color: $filter-card-button-colour-shadow;
   }
-}
-
-
+} 
 
 
 
